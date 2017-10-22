@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,13 +13,54 @@
         <!-- Bootstrap -->
         <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <!-- Font Awesome -->
+         <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
         <link href="/static/css/font-awesome.min.css" rel="stylesheet">
         {% block css %}
         {% endblock %}
         <!-- Custom Theme Style -->
         <link href="/static/css/custom.min.css" rel="stylesheet">
     </head>
-
+<style>
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+-webkit-box-shadow: 0 0 0 1000px white inset;
+    border:solid 1.5px #2c97de;
+    box-shadow:0 0 5px rgba(44,151,22,0.2);
+}
+::-webkit-scrollbar{
+            width: 10px;
+            /*滚动条宽度（右侧滚动条）*/
+            height: 10px;
+            /*滚动条高度（底部滚动条）*/
+            background-color: #333;
+        }
+        /*滚动条的轨道，一下两个样式组合作用于滚动条滚动轨迹的表现*/
+        ::-webkit-scrollbar-track{
+            box-shadow: inset 0 0 5px rgba(0,0,0,.3);
+            background-color: #8d91e8;
+        }
+        ::-webkit-scrollbar-track-piece {
+            background:#6ffafe;
+        }
+        /*滚动条的滑块按钮*/
+        ::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background-color: #4bd2f7;
+            box-shadow: inset 0 0 5px #000;
+        }
+        /*滚动条的上下左右两端的按钮*/
+        ::-webkit-scrollbar-button{
+            height: 10px;
+            width:10px;
+            background-color: #3a32ed;
+        }
+        /*滚动条下边和右边按钮的交接处*/
+        ::-webkit-scrollbar-corner {
+            background:#82AFFF;
+        }
+</style>
     <body class="nav-md">
         <div class="container body">
             <div class="main_container">
@@ -30,9 +72,9 @@
 
 
                         <!-- menu profile quick info -->
-                       <div class="profile">
+                       <div class="profile" style="padding: 7px;">
                             <div class="profile_pic">
-                                <img src="/static/img/yv2.jpg" alt="..." class="img-circle profile_img">
+                                <img src="{% static '/img/yv2.jpg' %}" alt="..." class="img-circle profile_img">
                             </div>
                             <div class="profile_info">
                                 <h4 style="color: #00fff4;">OMS_IOOI</h4>
@@ -197,7 +239,7 @@
                     <!-- footer content -->
                     <footer>
                         <div class="pull-right">
-                            oms_iooi运维管理平台 - Powered by <a href="http://blog.csdn.net/Lockey23" target="_blank">Lockey23</a>
+                            oms_iooi运维管理平台 - Powered by <a href="http://www.lockey.com" target="_blank">Lockey23</a>
                         </div>
                         <div class="clearfix"></div>
                     </footer>
